@@ -21,5 +21,17 @@ photoUpload();
 // megoldás: async function + let result = await uploadStatus
 // await: amíg nem resolvált a promise, addig nem megyünk a következő sorra,
 // így a result változóba a helyes uploadStatus érték fog kerülni
-
 // ezután a console log: "Upload successful", és ["Profile picture"]
+
+
+/* get a random joke from Chuck Norris API with fetch + async await */
+const norrisApi = 'https://api.chucknorris.io/jokes/random';
+
+async function getJoke() {
+    const response = await fetch(norrisApi);
+    const data = await response.json();
+
+    console.log(data.value);
+}
+
+getJoke();
