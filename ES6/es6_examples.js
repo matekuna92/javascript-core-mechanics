@@ -300,6 +300,17 @@ let value = article[Symbol.for('article')];
 console.log(value); // 'My first article
 console.log(Object.getOwnPropertyNames(value)); // ['title']
 
+// solve name conflicts with symbols: symbol id and id field wont overwrite each other
+const id = Symbol();
+const courseInfo = {
+    title: "javascript",
+    topics: ["strings", "arrays", "symbols"],
+    id: "112233"
+}
+
+courseInfo[id] = 445566;
+console.log(courseInfo); // {title: "javascript", topics: Array(3), id: "112233", Symbol(): 445566}
+
 /* ITERATOR, GENERATOR, PROMISE */
 
 // Iterator - egy object, amivel bejárható tömb, object vagy akár string is 
