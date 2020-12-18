@@ -840,7 +840,58 @@ console.log(...letters.values()); // A B C
 
 /* Továbbiak: ArrayBuffer, Typed Array, Map, WeakMap, Set, WeakSet */
 
+/* MAP */
+// Map is an object storing key-value pairs. In map any values can be stored: objects, primitive values
+// map usage: if we want to use something else than string as a key
+let course = new Map();
 
+course.set("react", { description:  "ui" });
+course.set("jest", { description: "testing" });
+
+console.log(course); // Map(2) {"react" => {…}, "jest" => {…}}. Open Map in console, then it shows: 
+/*[[Entries]]
+0: {"react" => Object}
+1: {"jest" => Object}*/
+
+console.log(course.react);  // undefined, map properties can be accessed by GET
+console.log(course.get("react"));
+
+//
+let details = new Map([
+  [new Date(), "today"],
+  [2, { javascript: ["react", "nodejs", "js"] }],
+  ["items", [1,2]]
+]);
+
+console.log(details.size);  // 3
+
+details.forEach( item => {
+  console.log(item);
+})
+/* today 
+{javascript: Array(3)}
+(2) [1, 2]
+*/
+
+/* SETS */
+
+// Set - collection of values that can be any type, every value must be unique
+
+let books = new Set();
+
+books.add("Book 1");
+books.add("Book 2");
+books.add("Book 2");  // wont be added again, every value must be unique, size will be still 2
+
+console.log(books); // Set(2) {"Book 1", "Book 2"}
+
+books.has("book 2"); // false
+books.has("Book 2"); // true
+books.delete("Book 2");
+
+books.forEach( item => {
+  console.log(item);
+})
 
 
 
