@@ -877,6 +877,32 @@ console.log(backpackingMeals2);
   nighttime: "mac and cheese"
 */
 
+/* destructuring objects in function parameters */
+const vacation = {
+  destination: "Chile",
+  travellers: 2,
+  activity: "skiing",
+  price: "high"
+}
+
+function marketing( {destination, activity} ) {
+  return `Come to ${destionation} to do some ${activity}`;
+}
+
+// passing whole object as argument, then only using the destination and activity property from it
+console.log(marketing(vacation));    // Come to Chile to do some skiing
+
+const { title, price } = {
+  title: "Reuben",
+  price: 7,
+  description: "A classic",
+  ingredients: [
+    "bread",
+    "corned beef",
+    "dressing"
+  ]
+}
+
 /* Továbbiak: ArrayBuffer, Typed Array, Map, WeakMap, Set, WeakSet */
 
 /* MAP */
