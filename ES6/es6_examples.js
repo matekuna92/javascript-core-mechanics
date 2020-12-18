@@ -838,6 +838,45 @@ console.log(...letters.entries());  // [0, "A"], [1, "B"], [2, "C"]
 console.log(...letters.keys()); // 0 1 2
 console.log(...letters.values()); // A B C
 
+// create object with spread operator
+const daytime = {
+   breakfast: "oatmeal",
+   dinner: "peanut butter and jelly"
+}
+
+const nighttime = "mac and cheese"
+
+const backpackingMeals = {
+  daytime,
+  nighttime
+}
+
+/* nesting problem: */
+console.log(backpackingMeals);
+/* 
+{daytime: {…}, nighttime: "mac and cheese"}
+daytime:
+  breakfast: "oatmeal"
+  dinner: "peanut butter and jelly"
+__proto__: Object
+nighttime: "mac and cheese"
+*/
+
+const backpackingMeals2 = {
+  ...daytime,
+  nighttime
+}
+
+/* now instead of the whole daytime object, its key-value pairs are pushed into the object as individual elements */
+console.log(backpackingMeals2);
+
+/*
+{breakfast: "oatmeal", dinner: "peanut butter and jelly", nighttime: "mac and cheese"}
+  breakfast: "oatmeal"
+  dinner: "peanut butter and jelly"
+  nighttime: "mac and cheese"
+*/
+
 /* Továbbiak: ArrayBuffer, Typed Array, Map, WeakMap, Set, WeakSet */
 
 /* MAP */
